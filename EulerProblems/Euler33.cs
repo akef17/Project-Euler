@@ -19,56 +19,66 @@ namespace EulerProblems
             }
             return (y);
         }
-        int Pseudodiv(int x,int y)
+        float Pseudodiv(int x,int y)
         {
             int a = x / 10;
             int b = x % 10;
             int c = y / 10;
             int d = y % 10;
 
-            if (a == c && a != 0 && d != 0)
-                return b / d;
-            if (a == d && a != 0 && c !=0)
-                return b / c;
-            if (b == c && b != 0 && d != 0)
-                return a / d;
-            if (b == d && b != 0 && c != 0)
-                return a / c;
-            return -1;
+            float af = (float)a;
+            float bf = (float)b;
+            float cf = (float)c;
+            float df = (float)d;
+            // add logic to count for multiple matches
+            //if (a == c)
+            //    return (bf / df);
+            if (a == d)
+                return (bf / cf);
+            if (b == c)
+                return (af / df);
+            //if (b == d)
+            //    return (af / cf);
+            return (float)(-1);
         }
-        int Num(int x, int y)
+        int Numerator(int x, int y)
         {
             float a = (float)x;
             float b = (float)y;
-            float c = (float)Pseudodiv(x, y);
+            float c = Pseudodiv(x, y);
             if ((a/b) == c)
                 return x;
             return 1;
         }
-        int Denom(int x, int y)
+        int Denominator(int x, int y)
         {
             float a = (float)x;
             float b = (float)y;
-            float c = (float)Pseudodiv(x, y);
+            float c = Pseudodiv(x, y);
             if ((a/b) == c)
                 return y;
             return 1;
         }
         public int Answer()
         {
-            int i;
-            int j;
             int prodnum = 1;
-            int denomnum = 1;
-            for (i = 10; i < 100; i++)
+            int proddemom = 1;
+            for (int i = 10; i < 100; i++)
             {
-                for (j = 10; j < 100; j++)
+                for (int j = 10; j < i; j++)
                 {
-                    prodnum *= Num(i, j);
-                    denomnum *= Denom(i, j);
+                    if (j % 10 == 0 && i % 10 == 0)
+                        continue;
+                    prodnum *= Numerator(j, i);
+                    proddemom *= Denominator(j, i);
+                    if (Numerator(j, i) != 1)
+                    {
+                        Console.WriteLine(Numerator(j, i));
+                        Console.WriteLine(Denominator(j, i));
+                    }
                 }
             }
-            return Factor(prodnum, denomnum);
+            return Factor(prodnum, proddemom);
         }
     }
 }

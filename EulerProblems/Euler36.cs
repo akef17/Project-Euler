@@ -8,10 +8,10 @@ namespace EulerProblems
 {
     class Euler36
     {
-        long Reverse(long x)
+        ulong Reverse(ulong x)
         {
-            long num;
-            long newnum = 0;
+            ulong num;
+            ulong newnum = 0;
             if (x >= 0 && x <= 9)
                 return x;
             while (x >= 1)
@@ -22,10 +22,10 @@ namespace EulerProblems
             }
             return newnum;
         }
-        long Exponential(long x, long y)
+        ulong Exponential(ulong x, ulong y)
         {
-            long z;
-            long power = 1;
+            ulong z;
+            ulong power = 1;
             if (y == 0)
                 return 1;
             for (z = 1; z <= y; z++)
@@ -35,27 +35,33 @@ namespace EulerProblems
             return power;
         }
 
-        public long Binary(long decnum)
+        public ulong Binary(ulong decnum)
         {
-            long binnum = 0;
-            for (long i = 19; i >= 0; i--)
+            ulong binnum = 0;
+            ulong i = 21;
+            do 
             {
+                i--;
                 if (decnum >= Exponential(2, i))
                 {
                     binnum += Exponential(10, i);
-                    decnum -= Exponential(2, i);
+                    decnum -= Exponential(2, i);                  
                 }
             }
+            while(i>0);
+
             return binnum;
         }
-        public long Answer()
+        public ulong Answer()
         {
-            long i;
-            long sum = 0;
-            for (i = 0; i < 1000000; i++)
-            {
+            ulong i;
+            ulong sum = 0;
+            for (i = 1; i < 1000000; i++)
+            {                
                 if (Reverse(i) == i && Reverse(Binary(i)) == Binary(i))
+                {
                     sum += i;
+                }
             }
             return sum;
         }

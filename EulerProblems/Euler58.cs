@@ -8,11 +8,11 @@ namespace EulerProblems
 {
     class Euler58
     {
-        float IsPrime(float n)
+        int IsPrime(long n)
         {
-            float i;
-            float count = 0;
-            for (i = 1; i < n; i++)
+            long i;
+            long count = 0;
+            for (i = 1; (i*i) <= n; i++)
             {
                 if (n % i == 0)
                     count++;
@@ -24,12 +24,12 @@ namespace EulerProblems
             else
                 return 0;
         }
-        public float Answer()
+        public long Answer()
         {
-            float count = 1;
-            float primecount = 0;
+            long count = 1;
+            long primecount = 0;
 
-            for (float x = 3; x <= 7000; x=x+2)
+            for (long x = 3; x <= 50000; x+=2)
             {
                 if (IsPrime(x * x - (x - 1)) == 1)
                     primecount++;
@@ -38,10 +38,12 @@ namespace EulerProblems
                 if (IsPrime(x * x - (3 * (x - 1))) == 1)
                     primecount++;
                 count += 4;
-                if (primecount / count < .1)
+                if (primecount * 10 < count )
+                {
                     return x;
+                }
             }
-            return primecount/count;
+            return primecount;
         }
     }
 }

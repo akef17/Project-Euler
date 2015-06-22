@@ -8,28 +8,39 @@ namespace EulerProblems
 {
     class Euler20
     {
-        public double Factorial(double n)
+        public int Answer()
         {
-            double x;
-            double fact = 1;
-            for (x = n; x > 0; x--)
+            int multiplier;
+            int[] digits = new int[200];
+            for (int initialize = 0; initialize <= 175; initialize++)
             {
-                fact *= x;
+                digits[initialize] = 0;
             }
-            return fact;
-        }
-             public double Counter(double x){
-                 double sum = 0;
-                 double val;
-        double y = Factorial(x);
-                 while(y>1){                    
-                     val = Math.Floor(y % 10);
-                     sum += val;
-                     y = y / 10;
+            digits[0] = 1;
+            for (multiplier = 1; multiplier <= 100; multiplier++)
+            {
+                for (int i = 0; i <= 175; i++)
+                {
+                    digits[i] = digits[i] * multiplier;
+                }
+                for (int j = 0; j <= 175; j++)
+                {
+                    if (digits[j] >= 10)
+                    {
+                        digits[j + 1] += digits[j] / 10;
+                        digits[j] = digits[j] % 10;
+                    }
+                }
+            }
+            int sum = 0;
+            int k;
 
-                 }
-                 return sum;
-                     
-             }
+            for (k = 0; k <= 175; k++)
+                sum += digits[k];
+           
+           
+            return sum;
+        }
+               
     }
 }

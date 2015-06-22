@@ -8,37 +8,37 @@ namespace EulerProblems
 {
     class Euler45
     {
-        float TriNum(float n)
+        long TriNum(long n)
         {
-            for (float x = 1000;x < 10000;x++){
-                if (((2 * n) / (x + 1)) == x)
+            for (long x = 1;x < 10000;x++){
+                if ((((2 * n) / (x + 1)) == x) && (((2 * n) % (x + 1)) == 0))
                     return 1;
             }
             return 0;
             
         }
-        float PentNum(float n)
+        long PentNum(long n)
         {
-            for (float x = 1000; x < 10000; x++)
+            for (long x = 1; x < 10000; x++)
             {
-                if (((2 * n) / (3*x - 1)) == x)
+                if ((((2 * n) / (3*x - 1)) == x) && (((2 * n) % (3*x - 1)) == 0))
                     return 1;
             }
             return 0;
         }
-        int HexNum(float n)
+        long HexNum(long n)
         {
-            for (float x = 1000; x < 10000; x++)
+            for (long x = 1; x < 10000; x++)
             {
-                if ((n / (2*x - 1)) == x)
+                if (((n / (2*x - 1)) == x) && ((n % (2*x - 1)) == 0))
                     return 1;
             }
             return 0;
         }
-        public float Calc()
+        public long Answer()
         {
-            float x;
-            for (x = 10000000; x < 20000000; x++)
+            long x;
+            for (x = 40756; x < 20000000; x++)
             {
                 if ((TriNum(x) == 1) && (PentNum(x) == 1) && (HexNum(x) == 1))
                     return x;

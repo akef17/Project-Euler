@@ -2,45 +2,53 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace EulerProblems
 {
     class Euler25
     {
-        public float DigitCount(float n)
+        public int Answer()
         {
-            float count = 0;
-            while (n >= 1)
+            int[] num1 = new int[1001];
+            int[] num2 = new int[1001];
+            for (int initialize = 0; initialize <= 1000; initialize++)
             {
-                count++;
-                n /= 10;
+                num1[initialize] = 0;
+                num2[initialize] = 0;
             }
-            return count;
-        }
-        public float Fib(float x)
-        {
+            num1[0] = 1;
 
-            if (x == 1)
-                return 1;
-            else if (x == 2)
-                return 1;
-            else
+            for (int j = 1; j <= 100000; j++)
             {
-
-                return (Fib(x - 1) + Fib(x - 2));
-            }
-        }
-        public float Answer()
-        {
-            int x;
-            for (x = 1000; x < 10000000; x++)
-            {
-                if (DigitCount(Fib(x)) == 1000)
-                    return x;
+                if (j % 2 == 1)
+                {
+                    for (int k = 0; k <= 1000; k++)
+                    {
+                        num1[k] += num2[k];
+                        if (num1[k] > 9)
+                        {
+                            num1[k] = num1[k] - 10;
+                            (num1[k + 1])++;
+                        }
+                    }
+                }
+                else
+                {
+                    for (int k = 0; k <= 1000; k++)
+                    {
+                        num2[k] += num1[k];
+                        if (num2[k] > 9)
+                        {
+                            num2[k] = num2[k] - 10;
+                            (num2[k + 1])++;
+                        }
+                    }
+                }
+                if ((num1[999] > 0) || (num2[999] > 0))
+                    return j;
             }
             return 0;
         }
     }
-}
 
+}

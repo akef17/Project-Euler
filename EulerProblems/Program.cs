@@ -9,11 +9,11 @@ namespace EulerProblems
     class Program
     {
         static void Main(string[] args)
-        {
-            /*string line = Console.ReadLine();*/
-            Euler58 calc = new Euler58();
+        {            
+      //      string line = Console.ReadLine();
+            Test calc = new Test();
             /*calc.method(line);*/
-            float answer = calc.Answer();
+            string answer = calc.test();
             Console.WriteLine(answer.ToString());
             Console.ReadLine();
         }

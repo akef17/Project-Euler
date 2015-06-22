@@ -7,34 +7,36 @@ using System.Threading.Tasks;
 namespace EulerProblems
 {
     class Euler16
-    {
-        public float Exponential(float x, float y)
+    {        
+        
+       public int Answer()
         {
-            float z;
-            float power = 1;
-            if (y == 0)
-                return 1;
-            for (z = 1; z <= y; z++)
+            int sum = 0;
+            int[] digits = new int[350];
+            for (int initialize = 0; initialize<=330;initialize++)
             {
-                power *= x;
+                digits[initialize] = 0;
             }
-            return power;
-        }
-        float DigitSum(float n)
-        {
-            float num;
-            float sum = 0;
-            while (n > 1)
+            digits[0] = 1;
+
+            for (int j = 1; j <= 1000; j++)
             {
-                num = n % 10;
-                sum += num;
-                n /= 10;
+                for(int k=330; k>=0;k--)
+                {
+                    digits[k] = 2 * digits[k];
+                    if (digits[k] > 9)
+                    {
+                        digits[k] = digits[k] - 10;
+                        (digits[k + 1])++;
+                    }
+                }
+
+            }
+            for (int l = 0; l <= 330;l++)
+            {
+                sum += digits[l];
             }
             return sum;
-        }
-        public float Answer(float n,float m)
-        {
-            return DigitSum(Exponential(n,m));
         }
     }
 }
