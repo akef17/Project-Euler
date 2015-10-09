@@ -49,7 +49,7 @@
     <Compile Include="Euler145.cs" />
     <Compile Include="Euler15.cs" />
     <Compile Include="Euler16.cs" />
-    <Compile Include="Euler187.cs" />
+    <Compile Include="WIP\Euler187.cs" />
     <Compile Include="Euler2.cs" />
     <Compile Include="Euler20.cs" />
     <Compile Include="Euler206.cs" />
@@ -62,20 +62,20 @@
     <Compile Include="Euler3.cs" />
     <Compile Include="Euler30.cs" />
     <Compile Include="Euler32.cs" />
-    <Compile Include="Euler33.cs" />
+    <Compile Include="WIP\Euler33.cs" />
     <Compile Include="Euler34.cs" />
     <Compile Include="Euler35.cs" />
     <Compile Include="Euler36.cs" />
     <Compile Include="Euler37.cs" />
     <Compile Include="Euler38.cs" />
-    <Compile Include="Euler387.cs" />
+    <Compile Include="WIP\Euler387.cs" />
     <Compile Include="Euler4.cs" />
     <Compile Include="Euler40%28S%29.cs" />
     <Compile Include="Euler40.cs" />
     <Compile Include="Euler41.cs" />
-    <Compile Include="Euler43.cs" />
-    <Compile Include="Euler44.cs" />
-    <Compile Include="Euler45.cs" />
+    <Compile Include="WIP\Euler43.cs" />
+    <Compile Include="WIP\Euler44.cs" />
+    <Compile Include="WIP\Euler45.cs" />
     <Compile Include="Euler48.cs" />
     <Compile Include="Euler49.cs" />
     <Compile Include="Euler5.cs" />
@@ -84,17 +84,20 @@
     <Compile Include="Euler53.cs" />
     <Compile Include="Euler55.cs" />
     <Compile Include="Euler56.cs" />
+    <Compile Include="Euler57.cs" />
     <Compile Include="Euler58.cs" />
     <Compile Include="Euler6.cs" />
     <Compile Include="Euler63.cs" />
-    <Compile Include="Euler65.cs" />
+    <Compile Include="WIP\Euler65.cs" />
     <Compile Include="Euler7.cs" />
-    <Compile Include="Euler72.cs" />
-    <Compile Include="Euler76.cs" />
+    <Compile Include="Euler71.cs" />
+    <Compile Include="WIP\Euler72.cs" />
+    <Compile Include="WIP\Euler73.cs" />
+    <Compile Include="WIP\Euler76.cs" />
     <Compile Include="Euler85.cs" />
     <Compile Include="Euler9.cs" />
     <Compile Include="Euler92.cs" />
-    <Compile Include="Euler94.cs" />
+    <Compile Include="WIP\Euler94.cs" />
     <Compile Include="Euler97.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +106,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
