@@ -11,9 +11,9 @@ namespace EulerProblems
         static void Main(string[] args)
         {            
       //      string line = Console.ReadLine();
-            Euler65 calc = new Euler65();
+            Euler19 calc = new Euler19();
             /*calc.method(line);*/
-            long answer = calc.Answer(44);
+            int answer = calc.Answer();
             Console.WriteLine(answer.ToString());
             Console.ReadLine();
         }
